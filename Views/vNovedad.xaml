@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregaSegura.Views.vNovedad"
+             Title="Reportar novedad">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label x:Name="lblOrden" FontSize="18" FontAttributes="Bold" />
+            <Label Text="Use esta pantalla cuando no se pudo entregar el pedido." />
+
+            <Label Text="Motivo:" Margin="0,10,0,0" />
+            <Picker x:Name="pkMotivo" Title="Seleccione el motivo" ItemDisplayBinding="{Binding descripcion}"
+                    SelectedIndexChanged="pkMotivo_SelectedIndexChanged" />
+
+            <Label Text="Descripción:" />
+            <Editor x:Name="txtDescripcion" Placeholder="Explique lo que pasó" HeightRequest="100" MaxLength="300"
+                    TextChanged="txtDescripcion_TextChanged" />
+            <Label x:Name="lblContador" Text="0/300" HorizontalOptions="End" FontSize="12" />
+
+            <Label Text="Foto (opcional):" />
+            <Label x:Name="lblSinFoto" Text="(sin foto)" />
+            <Image x:Name="imgFoto" HeightRequest="160" Aspect="AspectFit" />
+            <Button x:Name="btnFoto" Text="Tomar foto" Clicked="btnFoto_Clicked" />
+
+            <Button x:Name="btnGuardar" Text="Guardar novedad" BackgroundColor="Red" Clicked="btnGuardar_Clicked" />
+            <ActivityIndicator x:Name="indicador" IsRunning="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregaSegura.Views.vLogin"
+             Title="Entrega Segura">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="10">
+
+            <Image Source="logo.png" WidthRequest="120" />
+            <Label Text="ENTREGA SEGURA" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label Text="Iniciar sesión" HorizontalOptions="Center" />
+
+            <Label Text="Correo:" />
+            <Entry x:Name="txtCorreo" Placeholder="nombre@entregasegura.com" Keyboard="Email" />
+
+            <Label Text="Contraseña:" />
+            <Entry x:Name="txtContrasena" Placeholder="Contraseña" IsPassword="True" />
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="chkMostrar" CheckedChanged="chkMostrar_CheckedChanged" />
+                <Label Text="Mostrar contraseña" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="chkRecordar" />
+                <Label Text="Recordar mi correo" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_Clicked" />
+            <ActivityIndicator x:Name="indicador" IsRunning="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

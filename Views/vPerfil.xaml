@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntregaSegura.Views.vPerfil"
+             Title="Mi perfil">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="6">
+
+            <Image Source="logo.png" WidthRequest="80" />
+            <Label x:Name="lblNombre" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label x:Name="lblCorreo" HorizontalOptions="Center" />
+            <Label x:Name="lblRol" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            <Label Text="Mis datos" FontAttributes="Bold" Margin="0,15,0,0" />
+            <Label x:Name="lblCedula" />
+            <Label x:Name="lblTelefono" />
+
+            <Label Text="Vehículo asignado" FontAttributes="Bold" Margin="0,15,0,0" />
+            <Label x:Name="lblPlaca" />
+            <Label x:Name="lblModelo" />
+            <Label x:Name="lblCapacidad" />
+
+            <Label Text="Mi jornada" FontAttributes="Bold" Margin="0,15,0,0" />
+            <Label x:Name="lblEntregadas" />
+            <Label x:Name="lblNovedades" />
+            <Label x:Name="lblMonto" />
+
+            <ActivityIndicator x:Name="indicador" IsRunning="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

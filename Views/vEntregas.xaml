@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelos="clr-namespace:EntregaSegura.Models"
+             x:Class="EntregaSegura.Views.vEntregas"
+             Title="Mis entregas">
+    <Grid RowDefinitions="Auto,*" Padding="15" RowSpacing="10">
+        <Label Text="Toque una orden para ver el detalle. Deslice hacia abajo para actualizar." />
+
+        <RefreshView x:Name="refrescar" Grid.Row="1" Refreshing="refrescar_Refreshing">
+            <CollectionView x:Name="lstOrdenes" SelectionMode="Single" SelectionChanged="lstOrdenes_SelectionChanged">
+                <CollectionView.EmptyView>
+                    <Label Text="No tiene entregas pendientes." HorizontalOptions="Center" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="modelos:Orden">
+                        <VerticalStackLayout Padding="5,8">
+                            <Label Text="{Binding Titulo}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding cliente.direccion}" />
+                            <Label Text="{Binding Resumen}" FontSize="13" />
+                            <Label Text="{Binding EstadoTexto}" TextColor="{Binding ColorEstado}" />
+                            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8,0,0" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>
